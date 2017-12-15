@@ -1,0 +1,7 @@
+[package]
+name = "robo_gm"
+version = "0.1.0"
+authors = ["Quigley <quigley@rollforguild.com>"]
+
+[dependencies]
+rand = "0.3.18"
