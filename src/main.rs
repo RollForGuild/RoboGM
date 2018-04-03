@@ -1,14 +1,37 @@
 extern crate rand;
 
 use std::f64::consts::PI;
+use rand::Rng;
+
+#[allow(dead_code)]
+struct Point {
+    x: i32,
+    y: i32
+}
+
+#[allow(dead_code)]
+struct Rectangle {
+    p1: Point,
+    p2: Point,
+}
 
 fn main() {
     println!("Hello, world!");
-    let (a, b) = point_in_circle_i32(2_000u32);
-    println!("Round -> X: {}, Y: {}", a, b);
+    let mut rng = rand::thread_rng();
 
-    let (c, d) = point_in_cricle_f64(200.12461324);
-    println!("Non Round -> X: {}, Y: {}", c, d);
+    let num = 150i32;
+    let radius = 3 * num;
+    //let rectangles: [Rectangle: num];
+    for _n in 0..num {
+        let (a, b) = point_in_circle_i32(radius as u32);
+        let point1 = Point { x: a, y: b};
+
+        println!("Point{{ x: {}, y: {} }}", point1.x, point1.y);
+    }
+}
+
+// fn gen_rectangles(size: &str) -> Rectangle {
+fn gen_rectangles() -> () {
 }
 
 // Function that returns a point within a circle with the defined radius
